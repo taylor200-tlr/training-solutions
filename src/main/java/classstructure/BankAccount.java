@@ -22,7 +22,7 @@ public class BankAccount {
     }
 
     public String getInfo() {
-        return owner + "(" + accountNumber + "):" + balance + " Ft";
+        return owner + " (" + accountNumber + "): " + balance + " Ft";
     }
 
     public void transfer(BankAccount masikra, int amount) {
