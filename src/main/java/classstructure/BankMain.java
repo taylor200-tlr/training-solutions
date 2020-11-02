@@ -11,7 +11,7 @@ public class BankMain {
         String accountNumber = scanner.nextLine();
         System.out.println("Add meg a számlához tartozó nevet:");
         String owner = scanner.nextLine();
-        System.out.println("Add meg az egyenleged");
+        System.out.println("Add meg az egyenleged:");
         int balance = scanner.nextInt();
         BankAccount account1 = new BankAccount(accountNumber, owner, balance);
         System.out.println(account1.getInfo());
