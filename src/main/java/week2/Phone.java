@@ -1,5 +1,9 @@
 package week2;
 
+import java.util.Scanner;
+
+import static java.lang.System.in;
+
 public class Phone {
     String type;
     int mem;
@@ -29,5 +33,13 @@ public class Phone {
         Phone telefon2 = new Phone("iPhone", 12);
         System.out.println(telefon1.type + " - " + telefon1.mem);
         System.out.println(telefon2.type + " - " + telefon2.mem);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Add meg a telefonod gyártóját");
+        telefon1.type = scanner.nextLine();
+        System.out.println("Add meg a másik telefonod gyártóját");
+        telefon2.type = scanner.nextLine();
+
+
+
     }
 }
