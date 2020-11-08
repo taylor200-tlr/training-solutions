@@ -5,8 +5,8 @@ import java.util.Scanner;
 import static java.lang.System.in;
 
 public class Phone {
-    String type;
-    int mem;
+    private String type;
+    private int mem;
 
     public Phone(String type, int mem) {
         this.type = type;
