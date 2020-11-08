@@ -38,7 +38,12 @@ public class Phone {
         telefon1.type = scanner.nextLine();
         System.out.println("Add meg a másik telefonod gyártóját");
         telefon2.type = scanner.nextLine();
-
+        System.out.println("Első telefonod típusa:");
+        telefon1.mem = scanner.nextInt();
+        System.out.println("Második telefonod típusa:");
+        telefon2.mem = scanner.nextInt();
+        System.out.println(telefon1.type + " - " + telefon1.mem);
+        System.out.println(telefon2.type + " - " + telefon2.mem);
 
 
     }

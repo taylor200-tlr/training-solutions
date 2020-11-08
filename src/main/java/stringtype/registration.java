@@ -28,6 +28,12 @@ public class registration {
                         && password1.length() >= 8
                         && password1.equals(password2);
             }
+            public boolean isValidEmail(String email){
+                boolean isNotFirst = email.indexOf("@") > 0;
+                boolean isDotAfterAt = email.indexOf(".") > (email.indexOf("@") + 1);
+                boolean isDotNotLast = email.indexOf(".") < email.length();
+                return isNotFirst && isDotAfterAt && isDotNotLast;
+            }
 
         }
 
