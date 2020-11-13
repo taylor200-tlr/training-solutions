@@ -25,5 +25,11 @@ public class WorkdayCalculator {
 
     public static void main(String[] args) {
         System.out.println(new WorkdayCalculator().dayTypes(Day.FRIDAY, 7));
+        int x = 5;
+        int y = 2;
+        int z = x++ + (x - 4) * y - 2;
+        System.out.println(x + " " + z);
+        System.out.println(x);
+        System.out.println(z);
     }
 }
