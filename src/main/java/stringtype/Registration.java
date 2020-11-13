@@ -2,7 +2,7 @@ package stringtype;
 
 import java.util.Scanner;
 
-public class registration {
+public class Registration {
     public static void main(String[] args) {
         String username, password1, password2, email;
 
