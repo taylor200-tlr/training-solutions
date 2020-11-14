@@ -9,6 +9,7 @@ public class DayInMonth {
         int days = 0;
         switch (upperedMonth){
             case "FEBRUÁR":
+                //gondolom itt a year változót fel kellene használni a szökőév meghatározásához
                 days = 28;
                 break;
             case "ÁPRILIS":
@@ -27,7 +28,7 @@ public class DayInMonth {
                 days = 31;
                 break;
             default:
-                throw new IllegalArgumentException("Ismeretlen hónap");
+                throw new IllegalArgumentException("Ismeretlen hónap: " + upperedMonth);
         }
         return days;
     }
