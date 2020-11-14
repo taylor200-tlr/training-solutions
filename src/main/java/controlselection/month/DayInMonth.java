@@ -29,7 +29,7 @@ public class DayInMonth {
                 days = 31;
                 break;
             default:
-                throw new IllegalArgumentException("Ismeretlen hónap: " + upperedMonth);
+                throw new IllegalArgumentException("Ismeretlen hónap: " + month);
         }
         return days;
     }
