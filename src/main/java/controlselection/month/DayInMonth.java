@@ -9,8 +9,9 @@ public class DayInMonth {
         int days = 0;
         switch (upperedMonth){
             case "FEBRUÁR":
-                //gondolom itt a year változót fel kellene használni a szökőév meghatározásához
-                days = 28;
+                if (((year % 100 == 0) && (year % 400 == 0)) || ((year % 4 == 0) && (year % 100 > 0))){
+                days = 29;}
+            else days = 28;
                 break;
             case "ÁPRILIS":
             case "JÚNIUS":
@@ -36,7 +37,9 @@ public class DayInMonth {
     public static void main(String[] args) {
         DayInMonth dayInMonth = new DayInMonth();
         System.out.println(dayInMonth.howManyDaysInMonth(2020, "Január"));
-        System.out.println(dayInMonth.howManyDaysInMonth(2020, "február"));
+        System.out.println(dayInMonth.howManyDaysInMonth(2019, "február"));
+        System.out.println(dayInMonth.howManyDaysInMonth(2000, "február"));
+        System.out.println(dayInMonth.howManyDaysInMonth(2100, "február"));
         System.out.println(dayInMonth.howManyDaysInMonth(2020, "JúNiUs"));
         System.out.println(dayInMonth.howManyDaysInMonth(2020, "oktober"));
     }
