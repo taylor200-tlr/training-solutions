@@ -1,4 +1,4 @@
-package week2.projektmunka01;
+package week02.projektmunka01;
 
 import java.util.ArrayList;
 import java.util.List;

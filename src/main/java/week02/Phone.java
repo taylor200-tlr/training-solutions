@@ -1,8 +1,6 @@
-package week2;
+package week02;
 
 import java.util.Scanner;
-
-import static java.lang.System.in;
 
 public class Phone {
     private String type;

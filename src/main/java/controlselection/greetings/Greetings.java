@@ -17,5 +17,6 @@ public class Greetings {
     public static void main(String[] args) {
         Greetings greetings = new Greetings();
         System.out.println(greetings.greeting(19, 25));
+        System.out.print("    Hexo   World    ".trim().replace("x", "ll").substring(2, 10));
     }
 }
