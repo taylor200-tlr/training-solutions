@@ -21,7 +21,11 @@ public class LiteralsMain {
         int number1 = 1;
         int number2 = -2;
         System.out.println((Integer.toBinaryString(number1)));
+        System.out.println((Integer.toString(number1, 2)));
         System.out.println((Integer.toBinaryString(number2)));
+        System.out.println((Integer.toString(number2, 2)));
+
+        System.out.println(new Integer(1) + new Integer(2));
     }
 
 }
