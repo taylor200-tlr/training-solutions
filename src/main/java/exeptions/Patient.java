@@ -37,4 +37,13 @@ public class Patient {
     public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "name='" + name + '\'' +
+                ", socialSecutityNumber='" + socialSecutityNumber + '\'' +
+                ", yearOfBirth=" + yearOfBirth +
+                '}';
+    }
 }
