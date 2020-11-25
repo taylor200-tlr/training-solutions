@@ -1,5 +1,7 @@
 package literals;
 
+import java.util.ArrayList;
+
 public class LiteralsMain {
     public static void main(String[] args) {
         double quotient = 3/4;
@@ -26,6 +28,9 @@ public class LiteralsMain {
         System.out.println((Integer.toString(number2, 2)));
 
         System.out.println(new Integer(1) + new Integer(2));
+        for (int i = 3; i >=0; i--) {
+            System.out.println(i);
+        }
     }
 
 }
