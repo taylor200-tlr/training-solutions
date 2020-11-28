@@ -20,4 +20,8 @@ public class Store {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Store products: " + products;
+    }
 }
