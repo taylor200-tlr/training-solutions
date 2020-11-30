@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CapsulesTest {
     @Test
-    public void testCapsules(){
+    public void testCapsules() {
         Capsules capsules = new Capsules();
         capsules.addFirst("zöld");
         capsules.addFirst("fehér");
