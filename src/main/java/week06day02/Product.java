@@ -1,10 +1,11 @@
 package week06day02;
 
 public class Product {
-    private String name, category;
+    private String name;
     private int price;
+    private Category category;
 
-    public Product(String name, String category, int price) {
+    public Product(String name, Category category, int price) {
         this.name = name;
         this.category = category;
         this.price = price;
@@ -14,7 +15,7 @@ public class Product {
         return name;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 

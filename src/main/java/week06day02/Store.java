@@ -10,7 +10,7 @@ public class Store {
         this.products = products;
         }
 
-    public int getProductByCategoyName(String category){
+    public int getProductByCategoyName(Category category){
         int result = 0;
             for (Product i: products){
                 if (i.getCategory() == category){
