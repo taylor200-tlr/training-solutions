@@ -16,6 +16,5 @@ public class ProductTest {
         store.addProduct(product4);
         System.out.println(store);
         System.out.println(store.getNumberOfExpired());
-
     }
 }
