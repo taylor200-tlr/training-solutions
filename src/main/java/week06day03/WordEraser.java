@@ -6,10 +6,9 @@ public class WordEraser {
         String[] splittedText = text.split(" ");
         for (String i: splittedText){
             if (!i.equals(word)) {
-                erasedText = erasedText.append(i).append(" ");
+                erasedText.append(i).append(" ");
             }
         }
         return erasedText.toString().trim();
     }
-
 }
