@@ -32,4 +32,16 @@ public class Car {
         }
         return true;
     }
+
+    public double getFuelRate() {
+        return fuelRate;
+    }
+
+    public double getFuel() {
+        return fuel;
+    }
+
+    public double getTankCapacity() {
+        return tankCapacity;
+    }
 }

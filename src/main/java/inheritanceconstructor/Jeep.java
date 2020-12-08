@@ -9,18 +9,17 @@ public class Jeep extends Car{
         this.extraFuel = extraFuel;
     }
 
-    @Override
     public void modifyFuelAmount(double fuel) {
-        super.modifyFuelAmount(fuel);
+
     }
 
-    @Override
     public void drive(int km) {
-        super.drive(km);
+
     }
 
-    @Override
     public double calculateRefillAmount() {
-        return super.calculateRefillAmount();
+        double result = 0;
+
+        return result;
     }
 }
