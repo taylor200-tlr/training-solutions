@@ -16,7 +16,7 @@ public class Archer extends Character{
         return getRandom().nextInt(5) + 1;
     }
     private void shootingAnArrow(Character enemy){
-        numberOfArrow -= 1;
+        numberOfArrow --;
         hit(enemy, getActualSecondaryDamage());
     }
 
