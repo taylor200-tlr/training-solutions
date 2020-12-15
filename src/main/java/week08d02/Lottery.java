@@ -8,8 +8,11 @@ import java.util.Random;
 public class Lottery {
     private List<Integer> winnerNumbers = new ArrayList<>();
 
-    public Lottery(List<Integer> winnerNumbers) {
-        this.winnerNumbers = winnerNumbers;
+    public Lottery() {
+    }
+
+    public List<Integer> getWinnerNumbers() {
+        return winnerNumbers;
     }
 
     public void getFiveNumbers() {
@@ -20,14 +23,13 @@ public class Lottery {
         isDifferent(winnerNumbers);
     }
 
-    private boolean isDifferent(List<Integer> lotteryNumbers) {
+    private void isDifferent(List<Integer> lotteryNumbers) {
         Collections.sort(lotteryNumbers);
         for (int i = 0; i < 4; i++) {
-            if (lotteryNumbers.get(i) == lotteryNumbers.get(i + 1)){
+            if (lotteryNumbers.get(i).equals(lotteryNumbers.get(i + 1))){
                 lotteryNumbers.clear();
                 getFiveNumbers();
             }
         }
-        return true;
     }
 }

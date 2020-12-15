@@ -10,10 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class LotteryTest {
     @Test
     public void testLottery(){
-        List<Integer> winnerNumbers = new ArrayList<>();
-        Lottery lottery = new Lottery(winnerNumbers);
+        Lottery lottery = new Lottery();
         lottery.getFiveNumbers();
-        System.out.println(winnerNumbers);
+        System.out.println(lottery.getWinnerNumbers());
 
     }
 }
