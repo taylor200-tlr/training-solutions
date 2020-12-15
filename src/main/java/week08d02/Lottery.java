@@ -12,10 +12,11 @@ public class Lottery {
     }
 
     public List<Integer> getWinnerNumbers() {
+        getFiveNumbers();
         return winnerNumbers;
     }
 
-    public void getFiveNumbers() {
+    private void getFiveNumbers() {
         Random random = new Random();
         for (int i = 1; i < 6; i++) {
             winnerNumbers.add(random.nextInt(90) + 1);

@@ -11,7 +11,6 @@ class LotteryTest {
     @Test
     public void testLottery(){
         Lottery lottery = new Lottery();
-        lottery.getFiveNumbers();
         System.out.println(lottery.getWinnerNumbers());
 
     }
