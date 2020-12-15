@@ -6,7 +6,8 @@ class LotteryTest {
     @Test
     public void testLottery(){
         Lottery lottery = new Lottery();
-        System.out.println(lottery.getWinnerNumbers());
+        System.out.println(lottery.getNumbers());
+        System.out.println(lottery.getNewNumbers());
 
     }
 }
