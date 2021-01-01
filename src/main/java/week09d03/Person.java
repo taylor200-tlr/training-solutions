@@ -15,10 +15,9 @@ public class Person {
     public void setPresent() {
         Random random = new Random();
         int rnd = random.nextInt(4);
-        if (age > 14) {
-            present = Present.values()[rnd];
-        } else {
-            present = Present.values()[rnd-1];
+        present = Present.values()[rnd];
+        if (age>14 && present.equals(Present.TOY)){
+            setPresent();
         }
     }
 

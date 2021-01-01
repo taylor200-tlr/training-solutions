@@ -17,8 +17,7 @@ class SantaClausTest {
         SantaClaus santaClaus = new SantaClaus(persons);
         santaClaus.getThroughChimneys();
         for (Person person : persons){
-            System.out.println(person);
-            System.out.println(person.getName());
+            System.out.println(person.getName()+" "+person.getAge()+" "+person.getPresent());
         }
     }
 
