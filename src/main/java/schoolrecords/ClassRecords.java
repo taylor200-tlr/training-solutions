@@ -18,8 +18,11 @@ public class ClassRecords {
         return result;
     }
     public double calculateClassAverageBySubject(Subject subject){
+        if (students.size() == 0){
+            throw new IllegalArgumentException("Nincsenek tanulók a naplóban");
+        }
         double result = 0;
-
+        for (Mark i: )
         return result;
     }
 
@@ -28,9 +31,18 @@ public class ClassRecords {
         this.rnd = rnd;
     }
     public Student findStudentByName(String student){
-        Student result = new Student("Tanuló");
-
-        return result;
+        if (student == null || student.isBlank()){
+            throw new IllegalArgumentException("A tanuló nevét meg kell adni!");
+        }
+        if (students.size() == 0){
+            throw new IllegalArgumentException("Nincs tanuló a naplóban!");
+        }
+        for (Student i: students){
+            if (i.getName().equals(student)){
+                return i;
+            }
+        }
+        throw new IllegalArgumentException(student + " nem található a naplóban.");
     }
 
     public String getClassName() {

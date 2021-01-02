@@ -9,20 +9,28 @@ public class Student {
     public String getName() {
         return name;
     }
-    public double calculateAverage(){
+
+    public double calculateAverage() {
         double result = 0;
-
-        return result;
+        for (Mark i : marks) {
+            result += i.getMarkType().getValue();
+        }
+        return result / marks.size();
     }
-    public double calculateSubjectAverage(Subject subject){
-        double result = 0;
 
-        return result;
-    }
-    public void grading(Mark mark){
+    public double calculateSubjectAverage(Subject subject) {
+        double average = 0;
+        for (Mark i : marks) {
 
+        }
+        return average;
     }
-    public boolean isEmpty(String text){
+
+    public void grading(Mark mark) {
+        marks.add(mark);
+    }
+
+    public boolean isEmpty(String text) {
         return false;
     }
 
@@ -32,9 +40,10 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", marks=" + marks +
-                '}';
+        String result = "";
+        for (Mark item : marks) {
+            result += item.getSubject().getSubjectName() + ": " + item.toString();
+        }
+        return name + " marks: " + result;
     }
 }

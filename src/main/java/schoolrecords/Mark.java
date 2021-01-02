@@ -11,6 +11,10 @@ public class Mark {
         this.tutor = tutor;
     }
 
+    public Mark(String markType, Subject subject, Tutor tutor) {
+        this(MarkType.valueOf(markType), subject, tutor);
+    }
+
     public MarkType getMarkType() {
         return markType;
     }
@@ -25,10 +29,6 @@ public class Mark {
 
     @Override
     public String toString() {
-        return "Mark{" +
-                "markType=" + markType +
-                ", subject=" + subject +
-                ", tutor=" + tutor +
-                '}';
+        return markType.getDescription() + " - " + markType.getValue();
     }
 }

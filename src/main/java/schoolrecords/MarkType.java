@@ -1,8 +1,8 @@
 package schoolrecords;
 
 public enum MarkType {
-    A(5, "Kiváló"), B(4, "Jó"), C(3, "Közepes"),
-    D(2, "Elégséges"), F(1, "Bukás");
+    A(5, "excellent"), B(4, "very good "), C(3, "improvement needed"),
+    D(2, "close fail"), F(1, "fail");
 
     private int value;              //esetleg final?
     private String description;     //esetleg final?
