@@ -61,8 +61,7 @@ public class ClassRecords {
     }
 
     public boolean isEmpty(String text) {
-
-        return false;
+        return (text.isBlank() || (text == null));
     }
 
     public String listStudentNames() {
