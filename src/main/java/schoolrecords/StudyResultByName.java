@@ -1,8 +1,8 @@
 package schoolrecords;
 
 public class StudyResultByName {
-    private String studentName;
     private double studyAverage;
+    private String studentName;
 
     public StudyResultByName(double studyAverage, String studentName) {
         this.studentName = studentName;

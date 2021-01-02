@@ -20,10 +20,18 @@ public class Student {
 
     public double calculateSubjectAverage(Subject subject) {
         double average = 0;
+        int markNumber = 0;
         for (Mark i : marks) {
-
+            if (i.getSubject().equals(subject)){
+                average += i.getMarkType().getValue();
+                markNumber ++;
+            }
         }
-        return average;
+        if (markNumber == 0){
+            return markNumber;
+        }else {
+            return average / markNumber;
+        }
     }
 
     public void grading(Mark mark) {
@@ -31,7 +39,9 @@ public class Student {
     }
 
     public boolean isEmpty(String text) {
-        return false;
+        if (text.isBlank() || text == null){
+            return true;
+        }else return false;
     }
 
     public Student(String name) {

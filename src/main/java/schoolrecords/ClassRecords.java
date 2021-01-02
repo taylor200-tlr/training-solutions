@@ -9,36 +9,47 @@ public class ClassRecords {
     private Random rnd;
     private List<Student> students;
 
-    public boolean addStudent(Student student){
+    public boolean addStudent(Student student) {
         return false;
     }
-    public double calculateClassAverage(){
-        double result = 0;
 
-        return result;
+    public double calculateClassAverage() {
+        double result = 0;
+        for (Student i : students) {
+            result += i.calculateAverage();
+        }
+        if (students.size() == 0) {
+            return result;
+        } else {
+            return result / students.size();
+        }
     }
-    public double calculateClassAverageBySubject(Subject subject){
-        if (students.size() == 0){
+
+    public double calculateClassAverageBySubject(Subject subject) {
+        if (students.size() == 0) {
             throw new IllegalArgumentException("Nincsenek tanulók a naplóban");
         }
         double result = 0;
-        for (Mark i: )
-        return result;
+        for (Student i : students) {
+            result += i.calculateSubjectAverage(subject);
+        }
+        return result / students.size();
     }
 
     public ClassRecords(String className, Random rnd) {
         this.className = className;
         this.rnd = rnd;
     }
-    public Student findStudentByName(String student){
-        if (student == null || student.isBlank()){
+
+    public Student findStudentByName(String student) {
+        if (student == null || student.isBlank()) {
             throw new IllegalArgumentException("A tanuló nevét meg kell adni!");
         }
-        if (students.size() == 0){
+        if (students.size() == 0) {
             throw new IllegalArgumentException("Nincs tanuló a naplóban!");
         }
-        for (Student i: students){
-            if (i.getName().equals(student)){
+        for (Student i : students) {
+            if (i.getName().equals(student)) {
                 return i;
             }
         }
@@ -48,22 +59,37 @@ public class ClassRecords {
     public String getClassName() {
         return className;
     }
-    public boolean isEmpty(String text){
+
+    public boolean isEmpty(String text) {
 
         return false;
     }
-    public String listStudentNames(){
-        return "";
-    }
-    public List<StudyResultByName> listStudyResults(){
-        List<StudyResultByName> studyResultByNames = new ArrayList<>();
 
+    public String listStudentNames() {
+        StringBuilder studentList = new StringBuilder();
+        for (Student i : students) {
+            studentList.append(i.getName() + ", ");
+        }
+        return studentList.toString();
+    }
+
+    public List<StudyResultByName> listStudyResults() {
+        List<StudyResultByName> studyResultByNames = new ArrayList<>();
+        for (Student i : students) {
+            studyResultByNames.add(new StudyResultByName(i.calculateAverage(), i.getName()));
+        }
         return studyResultByNames;
     }
-    public boolean removeStudent(Student student){
-        return false;
+
+    public boolean removeStudent(Student student) {
+        if (students.contains(student)) {
+            return students.remove(student);
+        } else {
+            return false;
+        }
     }
-    public Student repetition(){
+
+    public Student repetition() {
         if (students.size() > 0) {
             return students.get(rnd.nextInt(students.size()));
         } else {
