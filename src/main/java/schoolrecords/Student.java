@@ -11,49 +11,70 @@ public class Student {
     }
 
     public double calculateAverage() {
-        double result = 0;
-        for (Mark i : marks) {
-            result += i.getMarkType().getValue();
+        double average = 0.0;
+        if (marks.size() == 0){
+            return average;
+        }else {
+            for (Mark i : marks) {
+                average += i.getMarkType().getValue();
+            }
+            return average / marks.size();
         }
-        return result / marks.size();
     }
 
     public double calculateSubjectAverage(Subject subject) {
-        double average = 0;
+        double average = 0.0;
         int markNumber = 0;
         for (Mark i : marks) {
-            if (i.getSubject().equals(subject)){
+            if (i.getSubject().equals(subject.getSubjectName())) {
                 average += i.getMarkType().getValue();
-                markNumber ++;
+                markNumber++;
             }
         }
-        if (markNumber == 0){
+        if (markNumber == 0) {
             return markNumber;
-        }else {
+        } else {
             return average / markNumber;
         }
     }
 
     public void grading(Mark mark) {
+        if (mark == null){
+            throw new NullPointerException("Mark must not be null!");
+        }
         marks.add(mark);
     }
 
     public boolean isEmpty(String text) {
-        if (text.isBlank() || text == null){
+        if (text.isBlank() || text == null) {
             return true;
-        }else return false;
+        } else return false;
     }
 
     public Student(String name) {
         this.name = name;
     }
 
+
+/* Amit én csináltam, de nem jó
     @Override
     public String toString() {
         String result = "";
-        for (Mark item : marks) {
-            result += item.getSubject().getSubjectName() + ": " + item.toString();
+        for (Mark i : marks) {
+            result += " marks" + i.getSubject().getSubjectName() + ": " + i.toString();
         }
-        return name + " marks: " + result;
+        return result;
     }
+
+ */
+//StringBuilderrel, mert ciklusban inkább ezt kellene használni stringek összefűzésére:
+@Override
+public String toString() {
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append(name + " marks: ");
+    for (Mark i: marks) {
+        stringBuilder.append(i.getSubject().getSubjectName()).append(": ").append(i.toString());
+    }
+    return stringBuilder.toString();
+}
 }

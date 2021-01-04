@@ -33,8 +33,7 @@ public class StudentTest {
         //Given
         Student student = new Student("Kovács");
         //When
-        student.grading(new Mark(MarkType.A, MATH, TUTOR));
-        //Then
+       student.grading(new Mark(MarkType.A, MATH, TUTOR));
         assertEquals("Kovács marks: matematika: excellent(5)", student.toString());
     }
 

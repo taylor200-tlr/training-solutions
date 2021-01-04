@@ -6,13 +6,21 @@ public class Mark {
     private Tutor tutor;
 
     public Mark(MarkType markType, Subject subject, Tutor tutor) {
+        if (subject == null || tutor == null){
+            throw new NullPointerException("Both subject and tutor must be provided!");
+        }
         this.markType = markType;
         this.subject = subject;
         this.tutor = tutor;
     }
 
     public Mark(String markType, Subject subject, Tutor tutor) {
-        this(MarkType.valueOf(markType), subject, tutor);
+        if (subject == null || tutor == null){
+            throw new NullPointerException("Both subject and tutor must be provided!");
+        }
+        this.markType = getMarkType();
+        this.subject = subject;
+        this.tutor = tutor;
     }
 
     public MarkType getMarkType() {
@@ -29,6 +37,6 @@ public class Mark {
 
     @Override
     public String toString() {
-        return markType.getDescription() + " - " + markType.getValue();
+        return markType.getDescription() + "(" + markType.getValue()+ ")";
     }
 }
