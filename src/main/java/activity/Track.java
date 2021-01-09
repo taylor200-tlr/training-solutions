@@ -15,20 +15,26 @@ public class Track {
     }
 
     public Coordinate findMaximumCoordinate() {
-        Coordinate result = new Coordinate();
+        Coordinate result = new Coordinate(0, 0);
 
         return result;
     }
 
     public Coordinate findMinimumCoordinate() {
-        Coordinate result = new Coordinate();
+        Coordinate result = new Coordinate(0, 0);
 
         return result;
     }
 
     public double getDistance() {
-
-        return 0.0;
+        double distance = 0.0;
+        if (trackPoints.size() < 2) {
+            return distance;
+        }
+        for (int i = 1; i < trackPoints.size(); i++) {
+            distance += trackPoints.get(i).GetDistanceFrom(trackPoints.get(i-1));
+        }
+        return distance;
     }
 
     public double getFullDecrease() {

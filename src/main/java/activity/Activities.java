@@ -10,22 +10,45 @@ public class Activities {
         this.activities = activities;
     }
 
-    public void addActivity(Activity activity){
-
+    public void addActivity(Activity activity) {
+        activities.add(activity);
     }
-    public List<Report> distancesByTypes(){
-        List<Report> reports = new ArrayList<>();
 
+    public List<Report> distancesByTypes() {
+        List<Report> reports = new ArrayList<>();
+        for (ActivityType i : ActivityType.values()) {
+            reports.add(new Report(i, getActivityDistanceByType(i)));
+        }
         return reports;
     }
-    public int numberOfTrackActivities(){
-        int result = 0;
 
+    public int numberOfTrackActivities() {
+        int result = 0;
+        for (Activity i : activities) {
+            if (!i.getType().equals(ActivityType.BASKETBALL)) {
+                result++;
+            }
+        }
         return result;
     }
-    public int numberOfWithoutTrackActivities(){
-        int result = 0;
 
+    public int numberOfWithoutTrackActivities() {
+        int result = 0;
+        for (Activity i : activities) {
+            if (i.getType().equals(ActivityType.BASKETBALL)) {
+                result++;
+            }
+        }
+        return result;
+    }
+
+    private double getActivityDistanceByType(ActivityType activityType) {
+        double result = 0.0;
+        for (Activity i : activities) {
+            if (i.getType().equals(activityType)) {
+                result += i.getDistance();
+            }
+        }
         return result;
     }
 
