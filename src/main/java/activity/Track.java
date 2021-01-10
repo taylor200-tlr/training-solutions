@@ -32,7 +32,7 @@ public class Track {
             return distance;
         }
         for (int i = 1; i < trackPoints.size(); i++) {
-            distance += trackPoints.get(i).GetDistanceFrom(trackPoints.get(i-1));
+            distance += trackPoints.get(i).getDistanceFrom(trackPoints.get(i-1));
         }
         return distance;
     }
