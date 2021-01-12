@@ -40,4 +40,12 @@ public class TrackPoint {
 
         return Math.sqrt(distance);
     }
+
+    @Override
+    public String toString() {
+        return "TrackPoint{" +
+                "coordinate=" + coordinate +
+                ", elevation=" + elevation +
+                '}';
+    }
 }

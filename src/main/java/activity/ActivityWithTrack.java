@@ -6,6 +6,7 @@ public class ActivityWithTrack implements Activity{
 
 
     public ActivityWithTrack(Track track, ActivityType activityType) {
+        this.track = track;
         this.activityType = activityType;
     }
 

@@ -104,4 +104,11 @@ public class Track {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Track{" +
+                "trackPoints=" + trackPoints +
+                '}';
+    }
+
 }
