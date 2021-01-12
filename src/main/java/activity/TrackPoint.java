@@ -19,19 +19,12 @@ public class TrackPoint {
 
     public double getDistanceFrom(TrackPoint trackPoint) {
         final int R = 6371; // Radius of the earth
-        double lat1 = 0;
-        double lat2 = 0;
-        double lon2 = 0;
-        double lon1 = 0;
-        double el1 = 0;
-        double el2 = 0;
-
-        el1 = trackPoint.getElevation();
-        el2 = elevation;
-        lat1 = trackPoint.coordinate.getLatitude();
-        lat2 = coordinate.getLatitude();
-        lon1 = trackPoint.coordinate.getLongitude();
-        lon2 = coordinate.getLongitude();
+        double lat1 = coordinate.getLatitude();
+        double lat2 = trackPoint.getCoordinate().getLatitude();
+        double lon1 = coordinate.getLongitude();
+        double lon2 = trackPoint.getCoordinate().getLongitude();
+        double el1 = getElevation();
+        double el2 = trackPoint.getElevation();
 
         double latDistance = Math.toRadians(lat2 - lat1);
         double lonDistance = Math.toRadians(lon2 - lon1);

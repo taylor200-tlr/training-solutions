@@ -10,6 +10,7 @@ class TrackPointTest {
 
     @Test
     void getDistanceFrom() {
+        assertTrue(trackPoint.getDistanceFrom(trackPoint2) > 83988.01 && trackPoint.getDistanceFrom(trackPoint2) < 83988.11);
     }
     @Test
     public void testCreateTrackPoint() {
