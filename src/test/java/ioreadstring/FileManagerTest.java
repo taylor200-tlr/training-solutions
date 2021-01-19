@@ -1,5 +1,7 @@
 package ioreadstring;
 
+import ioreadstring.names.FileManager;
+import ioreadstring.names.Human;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -11,7 +13,7 @@ class FileManagerTest {
     public void testFilemanager(){
         FileManager fileManager = new FileManager();
         List<Human> humans = fileManager.readFromFile();
-        assertEquals("TóthZsazsa", humans.get(0).getFirstName() + humans.get(1).getLastName());
+        assertEquals("TóthGábor", humans.get(0).getFirstName() + humans.get(1).getLastName());
     }
 
 }

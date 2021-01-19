@@ -1,4 +1,4 @@
-package ioreadstring;
+package ioreadstring.names;
 
 public class Human {
     private String firstName;

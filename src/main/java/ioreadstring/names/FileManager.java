@@ -1,4 +1,4 @@
-package ioreadstring;
+package ioreadstring.names;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileManager {
-    Path file = Path.of("human_names.txt");
+    Path file = Path.of("src", "main", "resources", "other_human_names.txt");
 
     public List<Human> readFromFile(){
         List<Human> peoples = new ArrayList<>();
