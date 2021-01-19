@@ -16,7 +16,7 @@ class DiaryTest {
 
     @Test
     void newMark() {
-        diary.newMark(file, 5);
+        diary.newMark("Lajos", 5);
 
 
     }

@@ -7,7 +7,10 @@ import java.nio.file.StandardOpenOption;
 
 public class Diary {
 
-    public void newMark(Path file, int mark) {
+    public void newMark(String studentName, int mark) {
+        String name = studentName + ".txt";
+        Path file = Path.of("src", "main", "resources", name);
+
         try {
             if (Files.exists(file)) {
                 Files.writeString(file, mark + "\n", StandardOpenOption.APPEND);
