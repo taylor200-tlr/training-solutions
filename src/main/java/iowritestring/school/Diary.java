@@ -27,7 +27,7 @@ public class Diary {
 
     public void average(String studentName) {
         double avg = 0.0;
-        int sum = 0;
+        double sum = 0.0;
         String name = studentName + ".txt";
         Path file = Path.of("src", "main", "resources", name);
         if (Files.exists(file)) {

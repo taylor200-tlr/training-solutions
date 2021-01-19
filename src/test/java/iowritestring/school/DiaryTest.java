@@ -23,7 +23,7 @@ class DiaryTest {
         diary.newMark("Norbi", 3);
         diary.newMark("Norbi", 1);
         diary.newMark("Norbi", 4);
-        diary.newMark("Norbi", 2);
+        diary.newMark("Norbi", 3);
 
         diary.average("Norbi");
 
