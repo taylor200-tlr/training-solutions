@@ -38,4 +38,8 @@ public class TransactionManager {
             throw new IllegalStateException("Can not Read the File", ioe);
         }
     }
+
+    public List<BankAccount> getAccountList(){
+        return bankAccounts;
+    }
 }
