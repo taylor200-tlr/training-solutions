@@ -13,24 +13,24 @@ public class SalaryWriter {
         this.names = names;
     }
 
-    public void writeNamesAndSalaries(Path path){
-        try(PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path))){
-            for (String name: names){
-                if (name.contains("Dr")){
+    public void writeNamesAndSalaries(Path path) {
+        try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path))) {
+            for (String name : names) {
+                if (name.contains("Dr")) {
                     writer.print(name);
                     writer.print(", ");
                     writer.println(500_000);
-                }else if (name.contains("Mr") || name.contains("Mrs")){
+                } else if (name.contains("Mr") || name.contains("Mrs")) {
                     writer.print(name);
                     writer.print(", ");
                     writer.println(200_000);
-                }else {
+                } else {
                     writer.print(name);
                     writer.print(", ");
                     writer.println(100_000);
                 }
             }
-        }catch (IOException ioe){
+        } catch (IOException ioe) {
             throw new IllegalStateException("Can not write file!", ioe);
         }
     }
