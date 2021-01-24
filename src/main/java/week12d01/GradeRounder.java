@@ -11,7 +11,6 @@ public class GradeRounder {
                     result[counter] = i + (5 - (84 % 5));
                 }
             }
-            System.out.println(grades[counter] + " - "+ result[counter]);
             counter++;
         }
         return result;
