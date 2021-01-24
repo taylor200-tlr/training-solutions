@@ -8,7 +8,7 @@ import java.nio.file.Path;
 public class FileSum {
 
     public int readFile(String name) {
-        Path path = Path.of("src", "main", "resources", name);
+        Path path = Path.of(name);
         try {
             String content = Files.readString(path);
             int number = Integer.parseInt(content);
@@ -19,7 +19,7 @@ public class FileSum {
     }
     public int sumNumbers(){
         int result = 0;
-        String filename = "";
+        String filename;
         for (int i=0;i<100;i++){
             //filename = String.format("number%02d.txt", i); <--Egy sorban a filenév beállítás
             //filename = "number" + (i<10 ? "0" : i) + ".txt";  <--Egy sorban a következő if szerkezet
@@ -29,7 +29,10 @@ public class FileSum {
                 filename = "number" + i + ".txt";
             }
             if (Files.isRegularFile(Path.of(filename))){
+                System.out.println(filename+" found");
                 result += readFile(filename);
+            }else{
+                System.out.println(filename);
             }
         }
         return result;
