@@ -21,7 +21,6 @@ public class Cities {
         }
     }
 
-    //mivel egy irányítószámhoz több település is tartozhat
     private void splitLine(String line) {
         String result[] = line.split(";");
         for (int i = 1; i < result.length; i++) {
