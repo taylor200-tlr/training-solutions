@@ -1,8 +1,8 @@
-package week04;
+package week04d03;
 
 import java.util.Scanner;
 
-public class NumberGuesser {
+public class GuessTheNumber {
     public static void main(String[] args) {
         boolean isGuessed = false;
         System.out.println("Gondoltam egy számra, találd ki!");
