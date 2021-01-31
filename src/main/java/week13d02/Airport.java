@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -36,13 +38,16 @@ public class Airport {
         return result;
     }
 
-    private Flight getFlightsRow(String row) {
+    private Flight getFlightsRow(String row) throws DateTimeParseException {
+        DateTimeFormatter timeColonFormatter = DateTimeFormatter.ofPattern("HH:mm");
         String[] flight = row.split(" ");
+        String[] time = flight[3].split(":");
+
         return new Flight(
                 flight[0],
                 flight[1].equals("Arrival") ? FlightState.ARRIVAL : FlightState.DEPARTURE,
                 flight[2],
-                LocalTime.parse(flight[3]));
+                LocalTime.of(Integer.parseInt(time[0]), Integer.parseInt(time[1])));
     }
 
     public Flight getFlight(String flightId) {
@@ -63,6 +68,7 @@ public class Airport {
                 result.add(actual);
             }
         }
+        Collections.sort(result);
         return result;
     }
 
