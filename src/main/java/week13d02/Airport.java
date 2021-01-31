@@ -74,10 +74,10 @@ public class Airport {
 
     public Flight getEarliestDepartureFlight() {
         Flight result = null;
-        Collections.min(flights);
+        Collections.sort(flights);
         for (int i = 0; i < flights.size(); i++){
             if (flights.get(i).getFlightState().equals(FlightState.DEPARTURE)){
-                result = flights.get(i);
+                return result = flights.get(i);
             }
         }
         return result;
@@ -93,5 +93,10 @@ public class Airport {
             }
         }
         return departure > arrival;
+    }
+
+    public List<Flight> getFlightsTest() {
+        Collections.sort(flights);
+        return flights;
     }
 }
