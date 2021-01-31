@@ -18,6 +18,7 @@ public class Airport {
     public Airport(Path path) {
         this.path = path;
         flights = getFlifgts();
+        Collections.sort(flights);
     }
 
     private void readFile() {
@@ -39,7 +40,6 @@ public class Airport {
     }
 
     private Flight getFlightsRow(String row) throws DateTimeParseException {
-        DateTimeFormatter timeColonFormatter = DateTimeFormatter.ofPattern("HH:mm");
         String[] flight = row.split(" ");
         String[] time = flight[3].split(":");
 
@@ -74,29 +74,24 @@ public class Airport {
 
     public Flight getEarliestDepartureFlight() {
         Flight result = null;
-        Collections.sort(flights);
-        for (int i = 0; i < flights.size(); i++){
-            if (flights.get(i).getFlightState().equals(FlightState.DEPARTURE)){
+        for (int i = 0; i < flights.size(); i++) {
+            if (flights.get(i).getFlightState().equals(FlightState.DEPARTURE)) {
                 return result = flights.get(i);
             }
         }
         return result;
     }
-    public boolean isDepartureMoreThanArrival(){
+
+    public boolean isDepartureMoreThanArrival() {
         int departure = 0;
         int arrival = 0;
-        for (Flight actual: flights){
-            if (actual.getFlightState().equals(FlightState.DEPARTURE)){
-                departure ++;
-            }else{
+        for (Flight actual : flights) {
+            if (actual.getFlightState().equals(FlightState.DEPARTURE)) {
+                departure++;
+            } else {
                 arrival++;
             }
         }
         return departure > arrival;
-    }
-
-    public List<Flight> getFlightsTest() {
-        Collections.sort(flights);
-        return flights;
     }
 }

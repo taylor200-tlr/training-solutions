@@ -3,10 +3,7 @@ package week13d02;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class AirportTest {
     Airport airport = new Airport(Path.of("cities.txt"));
@@ -29,14 +26,5 @@ class AirportTest {
     @Test
     void isDepartureMoreThanArrival() {
         System.out.println(airport.isDepartureMoreThanArrival());
-    }
-
-    @Test
-    void getFlightsTest(){
-        List<Flight> flight = airport.getFlightsTest();
-        for (Flight flight1:flight){
-            System.out.println(flight1);
-        }
-
     }
 }
