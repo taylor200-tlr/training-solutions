@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public class TemplateMerger {
+public class                                                                                      TemplateMerger {
 
     public String merge(Path file, List<Employee> employees) {
         StringBuilder result = new StringBuilder();
