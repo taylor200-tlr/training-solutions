@@ -5,9 +5,9 @@ import java.util.Set;
 
 public class LetterCounter {
 
-    public int countLetter(String text){
+    public int countLetter(String text) {
         Set<Character> letters = new HashSet<>();
-        for (char c: text.toLowerCase().toCharArray()){
+        for (char c : text.toLowerCase().toCharArray()) {
             if ((c >= 'a') && (c <= 'z')) {
                 letters.add(c);
             }
