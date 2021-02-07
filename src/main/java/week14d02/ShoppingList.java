@@ -42,25 +42,29 @@ public class ShoppingList {
         return result;
     }
 
-    public List<String> getItemsByOrderNumber(){
-        List<String> result = new ArrayList<>();
-
-        return result;
+    public List<String> getItemsByOrderNumber(String orderNumber) {
+        return order.get(orderNumber);
     }
 
-    public int getNumberOfSoldItem(String itemName){
-        int result = 0;
-
-        return result;
+    public int getNumberOfSoldItemByName(String itemName) {
+        return getItemStatistic().get(itemName);
     }
 
-    public int getNumberOfItemByOrderNumber(String orderNumber){
-        int result = 0;
-
-        return result;
+    public int getNumberOfItemByOrderNumber(String orderNumber) {
+        return order.get(orderNumber).size();
     }
 
-    public void getItemStatistic(){
-
+    public Map<String, Integer> getItemStatistic() {
+        Map<String, Integer> result = new HashMap<>();
+        for (String actualValue : order.keySet()){
+            for (String item : order.get(actualValue)){
+                if (!result.containsKey(item)){
+                    result.put(item, 1);
+                }else{
+                    result.put(item, result.get(item)+1);
+                }
+            }
+        }
+        return result;
     }
 }

@@ -14,12 +14,10 @@ public class Indexer {
 
         for (String name: names){
             initialLetter = name.charAt(0);
-            if (result.containsKey(initialLetter)){
-                result.get(initialLetter).add(name);
-            } else {
+            if (!result.containsKey(initialLetter)) {
                 result.put(initialLetter, new ArrayList<>());
-                result.get(initialLetter).add(name);
             }
+            result.get(initialLetter).add(name);
         }
         return result;
     }
