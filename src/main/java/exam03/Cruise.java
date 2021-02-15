@@ -25,21 +25,22 @@ public class Cruise {
         this.boat = boat;
         this.sailing = sailing;
         this.basicPrice = basicPrice;
+        this.passengers = new ArrayList<>();
     }
 
-    public void bookPassenger(Passenger passenger){
-        if (passengers.size()>= boat.getMaxPassengers()){
-            throw new IllegalArgumentException("There are no more free place on this boat!");
+    public void bookPassenger(Passenger passenger) {
+        if (passengers.size() >= boat.getMaxPassengers()) {
+            throw new IllegalArgumentException("There is no more free space on this boat!");
         }
         passengers.add(passenger);
     }
 
-    public double getPriceForPassenger(Passenger passenger){
+    public double getPriceForPassenger(Passenger passenger) {
         return passenger.getCruiseClass().getPrice() * basicPrice;
     }
 
-    public Passenger findPassengerByName(String name){
-        for (Passenger passenger: passengers){
+    public Passenger findPassengerByName(String name) {
+        for (Passenger passenger : passengers) {
             if (passenger.getName().equals(name)) {
                 return passenger;
             }
@@ -47,29 +48,29 @@ public class Cruise {
         return null;
     }
 
-    public List<String> getPassengerNamesOrdered(){
+    public List<String> getPassengerNamesOrdered() {
         List<String> result = new ArrayList<>();
-        for (Passenger passenger: passengers){
+        for (Passenger passenger : passengers) {
             result.add(passenger.getName());
         }
         Collections.sort(result);
         return result;
     }
 
-    public double sumAllBookingsCharged(){
+    public double sumAllBookingsCharged() {
         double result = 0.0;
-        for (Passenger passenger:passengers){
-            result += passenger.getCruiseClass().getPrice() * basicPrice;
+        for (Passenger passenger : passengers) {
+            result += getPriceForPassenger(passenger);
         }
         return result;
     }
 
-    public Map<CruiseClass, Integer> countPassengerByClass(){
+    public Map<CruiseClass, Integer> countPassengerByClass() {
         Map<CruiseClass, Integer> result = new HashMap<>();
-        for (Passenger passenger:passengers){
-            if (!result.containsKey(passenger.getCruiseClass())){
+        for (Passenger passenger : passengers) {
+            if (!result.containsKey(passenger.getCruiseClass())) {
                 result.put(passenger.getCruiseClass(), 1);
-            }else{
+            } else {
                 result.put(passenger.getCruiseClass(), result.get(passenger.getCruiseClass()) + 1);
             }
         }

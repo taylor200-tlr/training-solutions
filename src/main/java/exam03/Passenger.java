@@ -1,8 +1,7 @@
 package exam03;
 
-import org.jetbrains.annotations.NotNull;
 
-public class Passenger{
+public class Passenger {
     private String name;
     private CruiseClass cruiseClass;
 
