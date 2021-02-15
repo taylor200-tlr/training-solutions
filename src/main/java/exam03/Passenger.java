@@ -1,6 +1,8 @@
 package exam03;
 
-public class Passenger {
+import org.jetbrains.annotations.NotNull;
+
+public class Passenger{
     private String name;
     private CruiseClass cruiseClass;
 
@@ -16,4 +18,5 @@ public class Passenger {
         this.name = name;
         this.cruiseClass = cruiseClass;
     }
+
 }
