@@ -36,7 +36,7 @@ public class Histogram {
         String result = "";
         String line;
         int numberInLine;
-        while ((line = reader.readLine())  != null) {
+        while ((line = reader.readLine()) != null) {
 //            System.out.println(line);
             numberInLine = Integer.parseInt(line);
             result = drawHistogram(numberInLine, '*');
@@ -48,7 +48,7 @@ public class Histogram {
 
     private String drawHistogram(int numberInLine, char c) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i=0; i<numberInLine;i++){
+        for (int i = 0; i < numberInLine; i++) {
             stringBuilder.append(c);
         }
         return stringBuilder.toString();
