@@ -1,5 +1,6 @@
 package exam03;
 
+import java.text.Collator;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -53,7 +54,7 @@ public class Cruise {
         for (Passenger passenger : passengers) {
             result.add(passenger.getName());
         }
-        Collections.sort(result);
+        Collections.sort(result, Collator.getInstance(new Locale("hu", "HU")));
         return result;
     }
 
