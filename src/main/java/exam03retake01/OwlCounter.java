@@ -2,7 +2,6 @@ package exam03retake01;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -29,9 +28,9 @@ public class OwlCounter {
         String line;
         String[] dataLine;
         while ((line = reader.readLine()) != null) {
+            System.out.println(line);
             dataLine = line.split("=");
             owlsByRegion.put(dataLine[0], Integer.parseInt(dataLine[1]));
-            System.out.println(line);
         }
     }
 
@@ -41,7 +40,7 @@ public class OwlCounter {
 
     public static void main(String[] args) {
         OwlCounter owlCounter = new OwlCounter();
-        Path path = Path.of("owls.txt");
+        Path path = Path.of("exam03retake01/owls.txt");
         owlCounter.readFile(path);
         System.out.println(owlCounter.getNumberOfOwls("Baranya"));
         System.out.println(Character.isDigit('c'));
