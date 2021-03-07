@@ -13,20 +13,31 @@ public class Person {
             this.name = name;
         } else throw new IllegalArgumentException("Name must be not empty");
 
-        this.zipCode = zipCode;
+        if (isZipCodeValid(zipCode)){
+            this.zipCode = zipCode;
+        }else throw new IllegalArgumentException("Invalid postal code");
+
 
         if (isAgeValid(age)) {
             this.age = age;
         } else throw new IllegalArgumentException("Age must be between 10 and 150");
 
         if (isEmailValid(email)) {
-            this.email = email;
+            if (isEmailValid(email)){
+                this.email = email;
+            }else throw new IllegalArgumentException("Invalid email");
+
         }
 
         if (isSsnValid(taj)) {
             this.taj = taj;
         } else throw new IllegalArgumentException("Invalid Social Secutity Number");
 
+    }
+
+    private boolean isZipCodeValid(String zipCode) {
+        // még nincs kész
+        return false;
     }
 
     private boolean isSsnValid(String taj) {
