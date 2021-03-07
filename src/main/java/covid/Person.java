@@ -39,8 +39,8 @@ public class Person {
                     sum += Integer.parseInt((i + 1) % 2 == 1 ? String.valueOf(actualChar * 3) : String.valueOf(actualChar * 7));
                 }
             }
-        }
-        return false;
+        }else return false;
+        return (sum == Integer.parseInt(taj.substring(9))%10);
 
     }
 
