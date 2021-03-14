@@ -4,6 +4,7 @@ import org.mariadb.jdbc.MariaDbDataSource;
 
 import javax.sql.DataSource;
 import java.sql.*;
+import java.util.Scanner;
 
 public class CovidMain {
 
@@ -29,21 +30,38 @@ public class CovidMain {
             dataSource.setUrl("jdbc:mariadb://localhost:3306/covid?useUnicode=true");
             dataSource.setUser("covid");
             dataSource.setPassword("covid");
-
-            try (
-                    Connection conn = dataSource.getConnection();
-                    Statement stmt = conn.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("")
-            ) {
-                System.out.println(resultSet.getString(""));
-            }
         }
         catch (SQLException se) {
-            throw new IllegalStateException("Can not create data source", se);
+            throw new IllegalStateException("Can not create data source!", se);
         }
 
         CovidMain covidMain = new CovidMain(dataSource);
+        Scanner scanner = new Scanner(System.in);
 
         covidMain.printMenuToConsole();
+        System.out.println("Kérem válasszon: ");
+        int chosen = scanner.nextInt();
+
+        switch (chosen){
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+        }
+
     }
 }

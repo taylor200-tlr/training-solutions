@@ -36,8 +36,12 @@ public class Person {
     }
 
     private boolean isZipCodeValid(String zipCode) {
-        // még nincs kész
-        return false;
+        if (zipCode.length() == 4){
+            return true;
+        }else {
+            return false;
+        }
+
     }
 
     private boolean isSsnValid(String taj) {
