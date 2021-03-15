@@ -12,19 +12,18 @@ public class CovidDao {
         this.dataSource = dataSource;
     }
 
-    public void registerNewPerson(Person person){
+    public void registerNewPerson(Person person) {
         try (
                 Connection conn = dataSource.getConnection();
                 PreparedStatement stmt =
-                        conn.prepareStatement("insert into employees(emp_name) values (?,?,?,?,?)")) {
+                        conn.prepareStatement("insert into citizens(citizen_name, zip, age, email, taj) values (?,?,?,?,?)")) {
             stmt.setString(1, person.getName());
-            stmt.setString(1, person.getZipCode());
-            stmt.setInt(1, person.getAge());
-            stmt.setString(1, person.getEmail());
-            stmt.setString(1, person.getTaj());
+            stmt.setString(2, person.getZipCode());
+            stmt.setInt(3, person.getAge());
+            stmt.setString(4, person.getEmail());
+            stmt.setString(5, person.getTaj());
             stmt.executeUpdate();
-        }
-        catch (SQLException se) {
+        } catch (SQLException se) {
             throw new IllegalStateException("Cannot insert", se);
         }
     }

@@ -24,6 +24,11 @@ public class CovidMain {
     }
 
     public static void main(String[] args) {
+        String name ="";
+        String zip ="";
+        int age = 20;
+        String email ="";
+        String ssn ="";
         MariaDbDataSource dataSource;
         try {
             dataSource = new MariaDbDataSource();
@@ -45,12 +50,13 @@ public class CovidMain {
 
         switch (chosen){
             case 1:
-                String name = registration.readName();
-                String zip = registration.readZip();
-                int age = registration.readAge();
-                String email = registration.readEmail();
-                String ssn = registration.readSSN();
+                name = registration.readName();
+                zip = registration.readZip();
+                age = registration.readAge();
+                email = registration.readEmail();
+                ssn = registration.readSSN();
                 Person person = new Person(name, zip, age, email, ssn);
+                System.out.println(person);
                 new CovidDao(dataSource).registerNewPerson(person);
                 break;
             case 2:

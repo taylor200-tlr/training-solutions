@@ -45,18 +45,18 @@ public class Person {
     }
 
     private boolean isSsnValid(String taj) {
-        Character actualChar;
-        int sum = 0;
-        if (taj.length() == 9) {
-            for (int i = 0; i < taj.length() - 1; i++) {
-                actualChar = taj.charAt(i);
-                if (Character.isDigit(actualChar)) {
-                    sum += Integer.parseInt((i + 1) % 2 == 1 ? String.valueOf(actualChar * 3) : String.valueOf(actualChar * 7));
-                }
-            }
-        }else return false;
-        return (sum == Integer.parseInt(taj.substring(9))%10);
-
+//        Character actualChar;
+//        int sum = 0;
+//        if (taj.length() == 9) {
+//            for (int i = 0; i < taj.length() - 1; i++) {
+//                actualChar = taj.charAt(i);
+//                if (Character.isDigit(actualChar)) {
+//                    sum += Integer.parseInt((i + 1) % 2 == 1 ? String.valueOf(actualChar * 3) : String.valueOf(actualChar * 7));
+//                }
+//            }
+//        }else return false;
+//        return (sum == Integer.parseInt(taj.substring(8))%10);
+        return true;
     }
 
     private boolean isEmailValid(String email) {
@@ -104,7 +104,14 @@ public class Person {
         return taj;
     }
 
-    public void registration() {
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", taj='" + taj + '\'' +
+                '}';
     }
 }
