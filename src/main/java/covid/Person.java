@@ -47,7 +47,7 @@ public class Person {
     private boolean isSsnValid(String taj) {
         Character actualChar;
         int sum = 0;
-        if (taj.length() == 10) {
+        if (taj.length() == 9) {
             for (int i = 0; i < taj.length() - 1; i++) {
                 actualChar = taj.charAt(i);
                 if (Character.isDigit(actualChar)) {

@@ -39,12 +39,19 @@ public class CovidMain {
         Scanner scanner = new Scanner(System.in);
 
         covidMain.printMenuToConsole();
-        System.out.println("Kérem válasszon: ");
+        System.out.print("Kérem válasszon: ");
         int chosen = scanner.nextInt();
+        Registration registration = new Registration();
 
         switch (chosen){
             case 1:
-
+                String name = registration.readName();
+                String zip = registration.readZip();
+                int age = registration.readAge();
+                String email = registration.readEmail();
+                String ssn = registration.readSSN();
+                Person person = new Person(name, zip, age, email, ssn);
+                new CovidDao(dataSource).registerNewPerson(person);
                 break;
             case 2:
 
