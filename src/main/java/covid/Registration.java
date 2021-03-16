@@ -1,5 +1,7 @@
 package covid;
 
+import javax.sql.DataSource;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -35,6 +37,22 @@ public class Registration {
         System.out.println("Kérem adja meg a TAJ számát:");
         String ssn = scanner.nextLine();
         return ssn;
+    }
+    public String readFileName(){
+        System.out.println("Melyik file-ból olvassuk be az adatokat:");
+        String file = scanner.nextLine();
+        return file;
+    }
+
+    public void massRegistration(BufferedReader reader, DataSource dataSource) throws IOException{
+            String line;
+            reader.readLine();
+            while ((line = reader.readLine())  != null) {
+                String[] splittedLine = line.split(",");
+                Person person = new Person(splittedLine[0],splittedLine[1],Integer.parseInt(splittedLine[2]),splittedLine[3],splittedLine[4]);
+                new CovidDao(dataSource).registerNewPerson(person);
+            }
+
     }
 
 }
