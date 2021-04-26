@@ -49,6 +49,10 @@
             <version>2.36.0</version>
         </dependency>
     </dependencies>
+    <packaging>jar</packaging>
+
+    <name>${project.artifactId}</name>
+
 
 
 </project>
